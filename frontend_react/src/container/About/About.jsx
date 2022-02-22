@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import {images} from "../../constants";
-import './About.scss';
+import { AppWrap } from '../../wrapper';
 import { urlFor, client } from "../../client";
+import './About.scss';
 
 const About = () => {
     const [abouts, setAbouts] = useState([]);
@@ -33,10 +33,9 @@ const About = () => {
                        <p className="p-text" style={{ marginTop: 10 }}>{about.description}></p>
                    </motion.div>
                ))}
-
            </div>
        </>
         );
 }
 
-export default About;
+export default AppWrap(About, 'about');
